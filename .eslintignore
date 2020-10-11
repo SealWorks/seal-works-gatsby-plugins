@@ -2,5 +2,6 @@
 .eslintrc.js
 .prettierrc.js
 jest.config.js
+gatsby-*.js
 node_modules
 public

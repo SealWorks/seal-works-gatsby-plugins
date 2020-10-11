@@ -12,6 +12,7 @@
     ]
   },
   "devDependencies": {
-    "@this/eslint-config": "*"
+    "eslint": "^7.11.0",
+    "eslint-plugin-react": "^7.21.4"
   }
 }
