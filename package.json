@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "repository": "https://github.com/SealWorks/seal-works-gatsby-plugins.git",
+  "author": "Pedro Moreno <nennogabriel@gmail.com>",
+  "license": "MIT",
+  "workspaces": {
+    "packages": [
+      "packages/*",
+      "themes/*",
+      "plugins/*",
+      "examples/*"
+    ]
+  }
+}
