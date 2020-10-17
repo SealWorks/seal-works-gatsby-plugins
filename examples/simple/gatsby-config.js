@@ -1,6 +1,6 @@
-const siteMetadata = require('./content/settings/siteMetadata.json')
+const siteMetadata = require("./src/content/settings/siteMetadata.json")
 
 module.exports = {
   siteMetadata,
-  plugins: ['@sealworks/gatsby-theme-core'],
+  plugins: ["@sealworks/sw-theme-core"],
 }

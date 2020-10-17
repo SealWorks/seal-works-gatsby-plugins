@@ -1,7 +1,7 @@
 .cache
-.eslintrc.js
-.prettierrc.js
-jest.config.js
-gatsby-*.js
+tmp
 node_modules
+package-lock.json
+gatsby-*.js
+yarn.lock
 public

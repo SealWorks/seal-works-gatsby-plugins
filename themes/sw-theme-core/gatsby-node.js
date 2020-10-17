@@ -1,30 +1,33 @@
-const fs = require('fs')
+const fs = require("fs")
 
 // 1. make sure the content directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
-  const contentPath = options.contentPath || 'src/pages'
-  if (!fs.existsSync(contentPath)) {
-    reporter.info(`creating the ${contentPath} directory`)
-    fs.mkdirSync(contentPath, { recursive: true })
+  const { contentPagesPath } = options
+  if (!fs.existsSync(contentPagesPath)) {
+    reporter.info(`creating the ${contentPagesPath} directory`)
+    fs.mkdirSync(contentPagesPath, { recursive: true })
   }
 
-  const imgPath = options.imgPath || 'static/img'
+  const { imgPath } = options
   if (!fs.existsSync(imgPath)) {
     reporter.info(`creating the ${imgPath} directory`)
     fs.mkdirSync(imgPath, { recursive: true })
   }
 
-  const contentSiteMetadataFile = 'content/settings/siteMetadata.json'
-  const contentSiteMetadataDir = 'content/settings'
-  if (!fs.existsSync(contentSiteMetadataDir)) {
-    reporter.info(`creating the ${contentSiteMetadataDir} directory`)
-    fs.mkdirSync(contentSiteMetadataDir, { recursive: true })
+  const { contentSiteMetadataPath, contentSiteMetadataFilename } = options
+  if (!fs.existsSync(contentSiteMetadataPath)) {
+    reporter.info(`creating the ${contentSiteMetadataPath} directory`)
+    fs.mkdirSync(contentSiteMetadataPath, { recursive: true })
   }
-  if (!fs.existsSync(contentSiteMetadataFile)) {
-    fs.appendFile(contentSiteMetadataFile, '{}', function (err) {
-      if (err) throw err
-      reporter.info(`creating the ${contentSiteMetadataFile} file`)
-    })
+  if (!fs.existsSync(contentSiteMetadataPath + contentSiteMetadataFilename)) {
+    fs.appendFile(
+      contentSiteMetadataPath + contentSiteMetadataFilename,
+      "{}",
+      function (err) {
+        if (err) throw err
+        reporter.info(`creating the ${contentSiteMetadataFilename} file`)
+      }
+    )
   }
 }
 
