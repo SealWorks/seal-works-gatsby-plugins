@@ -1,6 +1,6 @@
 .cache
 tmp
-node_modules
+node_modules/*
 package-lock.json
 gatsby-*.js
 yarn.lock
