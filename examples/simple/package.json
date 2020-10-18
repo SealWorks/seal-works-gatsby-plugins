@@ -3,15 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "repository": "https://github.com/SealWorks/seal-works-gatsby-plugins.git",
+  "author": "Pedro Moreno <nennogabriel@gmail.com>",
   "scripts": {
+    "proxy-server": "GATSBY_GRAPHQL_IDE=playground npx netlify-cms-proxy-server",
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "develop": "GATSBY_GRAPHQL_IDE=playground gatsby develop -H 0.0.0.0 -o",
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@sealworks/sw-theme-core": "*",
+    "@sealworks/sw-styles-tailwindcss": "*",
     "gatsby": "^2.24.73",
+    "gatsby-plugin-netlify-cms": "^4.3.16",
+    "netlify-cms-app": "^2.12.27",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "@sealworks/sw-theme-core": "*"
+    "react-dom": "^16.13.1"
   }
 }

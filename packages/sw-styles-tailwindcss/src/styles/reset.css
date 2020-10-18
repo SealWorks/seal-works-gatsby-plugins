@@ -1,0 +1,28 @@
+/* purgecss start ignore */
+body,
+html {
+  @apply font-sans text-black w-full h-full;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* trick to smooth # links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* trick svg inherence */
+body,
+svg {
+  fill: currentColor;
+}
+
+button:focus {
+  @apply border-2;
+  outline: none;
+}
+
+#___gatsby {
+  overflow: hidden;
+}
+/* purgecss end ignore */

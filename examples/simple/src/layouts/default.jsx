@@ -9,7 +9,12 @@ const H5 = (props) => <h6 {...props} />
 const components = { h1: H1, h2: H2, h3: H3, h4: H4, h5: H5 }
 
 const DefaultLayout = () => {
-  return <MDXProvider components={components} />
+  return (
+    <>
+      <p>apenas isso</p>
+      <MDXProvider components={components} />
+    </>
+  )
 }
 
 export default DefaultLayout

@@ -1,7 +1,5 @@
-import manifest from 'content/settings/manifest.json'
+import manifest from '../content/settings/manifest.json'
 import CMS from 'netlify-cms-app'
-// import cloudinary from "netlify-cms-media-library-cloudinary"
-// import uploadcare from "netlify-cms-media-library-uploadcare"
 import { repository } from '../../package.json'
 import { collections, registerPreviews } from './collections'
 
@@ -30,11 +28,12 @@ if (repository) {
 }
 
 if (process.env.NODE_ENV === 'development') {
-  config.local_backend = true
+  // config.local_backend = true
+  config.local_backend = {
+    url: 'http://localhost:8081/api/v1',
+    allowed_hosts: ['192.168.*.*'],
+  }
 }
-
-// CMS.registerMediaLibrary(uploadcare);
-// CMS.registerMediaLibrary(cloudinary);
 
 CMS.init({ config })
 

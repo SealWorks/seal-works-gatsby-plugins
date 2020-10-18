@@ -2,7 +2,10 @@ import React from 'react'
 
 import PropTypes from 'prop-types'
 
-import { Template } from '~/templates/pages/links'
+// import { Template } from '~/templates/pages/links'
+function Template() {
+  return <div>Template</div>
+}
 
 function Preview({ entry }) {
   const data = entry.getIn(['data']).toJS()

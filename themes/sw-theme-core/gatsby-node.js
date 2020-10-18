@@ -1,33 +1,17 @@
-const fs = require("fs")
+const fs = require('fs')
 
 // 1. make sure the content directory exists
 exports.onPreBootstrap = ({ reporter }, options) => {
-  const { contentPagesPath } = options
+  const contentPagesPath = options.contentPagesPath || 'src/pages'
   if (!fs.existsSync(contentPagesPath)) {
     reporter.info(`creating the ${contentPagesPath} directory`)
     fs.mkdirSync(contentPagesPath, { recursive: true })
   }
 
-  const { imgPath } = options
+  const imgPath = options.imgPath || 'static/img'
   if (!fs.existsSync(imgPath)) {
     reporter.info(`creating the ${imgPath} directory`)
     fs.mkdirSync(imgPath, { recursive: true })
-  }
-
-  const { contentSiteMetadataPath, contentSiteMetadataFilename } = options
-  if (!fs.existsSync(contentSiteMetadataPath)) {
-    reporter.info(`creating the ${contentSiteMetadataPath} directory`)
-    fs.mkdirSync(contentSiteMetadataPath, { recursive: true })
-  }
-  if (!fs.existsSync(contentSiteMetadataPath + contentSiteMetadataFilename)) {
-    fs.appendFile(
-      contentSiteMetadataPath + contentSiteMetadataFilename,
-      "{}",
-      function (err) {
-        if (err) throw err
-        reporter.info(`creating the ${contentSiteMetadataFilename} file`)
-      }
-    )
   }
 }
 

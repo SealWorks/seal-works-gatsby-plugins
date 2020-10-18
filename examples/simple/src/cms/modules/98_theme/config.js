@@ -1,4 +1,4 @@
-const reqFields = require.context('./fields', true, /\.json$/)
+const reqFields = require.context('./fields', true, /\.js$/)
 const paths = reqFields.keys()
 
 const fields = paths.map((path) => reqFields(path))

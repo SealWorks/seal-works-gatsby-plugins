@@ -1,0 +1,8 @@
+{
+  "name": "Simple Example Site",
+  "short_name": "simple",
+  "start_url": "test.seal.works",
+  "background_color": "#ccc",
+  "theme_color": "#333",
+  "icon": "/img/icon.svg"
+}
